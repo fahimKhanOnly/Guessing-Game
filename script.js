@@ -8,7 +8,7 @@ const totalResults = document.querySelector(".game-results");
 const attemptMsg = document.createElement("p");
 totalResults.appendChild(attemptMsg);
 let attemptMsgInit = `Total Remaining Attempt: `;
-attemptMsg.textContent = `${attemptMsgInit} 5`;
+attemptMsg.textContent = `${attemptMsgInit} 10`;
 
 
 const resultMsg = document.createElement("p");
@@ -39,16 +39,15 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     checkingResult(usrNum.value);
     attemptsCount++;
-    if(5 <= attemptsCount){
-        attemptMsg.textContent = `${attemptMsgInit} ${5 - attemptsCount}`;
+    if(10 <= attemptsCount){
+        attemptMsg.textContent = `${attemptMsgInit} ${10 - attemptsCount}`;
         usrNum.disabled = true;
         usrNum.style.backgroundColor = "lightgrey";
         usrBtn.disabled = true;
         usrBtn.style.backgroundColor = "gray";
         usrBtn.style.textDecoration = "line-through";
-    }else{
-        attemptMsg.textContent = `${attemptMsgInit}${5 - attemptsCount}`;
-    }
+        usrNum.setAttribute("placeholder", "Game is over");
+    }else attemptMsg.textContent = `${attemptMsgInit}${10 - attemptsCount}`;
     usrNum.value = "";
 });
 const checkingResult = (value) => {
