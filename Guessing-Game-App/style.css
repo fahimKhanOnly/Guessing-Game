@@ -49,6 +49,8 @@ body{
     outline: none;
     font-size: large;
     padding-left: 0.5rem;
+    background-color: blanchedalmond;
+    border-radius: 4px;
 }
 .usr-input > p{
     font-size: 19px;
@@ -92,8 +94,11 @@ body{
     font-weight: bold;
     font-size: 23px;
 }
-.won-lost > span{
-    padding: 0 1rem;
+.won-lost{
+    display: flex;
+}
+.won-lost > p{
+    padding: 0 0.9rem;
 }
 
 
