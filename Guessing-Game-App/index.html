@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Guessing Game</title>
+</head>
+<body>
+    
+
+    <div class="container">
+        
+        <div class="card-body">
+            <h1 class="card-header">Guessing Game</h1>
+
+            <form class="play-ground" action="">
+                <label class="usr-input" for="number"><p>Enter a number Between 1 - 5 :</p>
+                    <input class="numInput" type="number" min="1" max="5" autofocus required>
+                </label>
+                <label for="submit">
+                    <input class="submit-btn" type="submit" value="Check Result">
+                </label>
+            </form>
+
+
+            <div class="game-results">
+                <p class="results"></p>
+                <p class="remaining-msg"></p>
+                <p class="won-lost"><span class="won-style"></span> | 
+                <span class="lost-style"></span></p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
