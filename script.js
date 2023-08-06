@@ -46,7 +46,7 @@ form.addEventListener("submit", (e) => {
         usrBtn.disabled = true;
         usrBtn.style.backgroundColor = "gray";
         usrBtn.style.textDecoration = "line-through";
-        usrNum.setAttribute("placeholder", "Game is over");
+        usrNum.setAttribute("placeholder", "Game over");
     }else attemptMsg.textContent = `${attemptMsgInit}${10 - attemptsCount}`;
     usrNum.value = "";
 });
