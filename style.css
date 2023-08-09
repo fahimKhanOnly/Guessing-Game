@@ -3,6 +3,10 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 *{
     padding: 0;
@@ -108,12 +112,47 @@ body{
 .won-lost > p{
     padding: 0 0.9rem;
 }
+.reload{
+    background-color: green;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    padding: 0.4rem 6rem;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.1s;
+    cursor: pointer;
+    display: none;
+}
+.reload:hover{
+    background-color: greenyellow;
+    color: black;
+}
 
 
 /* Responsive parts starts here */
 @media screen and (max-width: 720px) {
     .card-body{
         width: 600px;
+        background-color: rgba(127, 225, 255, 0.767);
+    }
+    .card-body:hover{
+        background-color: rgba(127, 225, 255, 0.767);
+    }
+    .submit-btn:hover{
+        background-color: chocolate;
+    }
+    .submit-btn:active{
+        background-color: rgb(97, 0, 194);
+    }
+    .reload:hover{
+        background-color: green;
+        color: whitesmoke;
+    }
+    .reload:active{
+        background-color: rgb(97, 0, 194);
     }
 }
 @media screen and (max-width: 621px) {
@@ -126,12 +165,6 @@ body{
     .card-body{
         width: 500px;
         background-color: rgba(127, 225, 255, 0.767);
-    }
-    .card-body:hover{
-        background-color: rgba(127, 225, 255, 0.767);
-    }
-    .submit-btn:hover{
-        background-color: chocolate;
     }
 }
 @media screen and (max-width: 515px){
@@ -174,6 +207,9 @@ body{
     }
     .usr-input > p{
         font-size: 17px;
+    }
+    .reload{
+        padding: 0.4rem 4.5rem;
     }
 }
 /* Responsive parts ends here */
