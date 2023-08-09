@@ -94,7 +94,7 @@ body{
     font-size: 20px;
 }
 .game-results > p{
-    padding: 0.3rem 0;
+    padding: 0.1rem 0;
 }
 .won-style{
     color: green;
@@ -111,6 +111,12 @@ body{
 }
 .won-lost > p{
     padding: 0 0.9rem;
+}
+hr{
+    width: 100%;
+}
+.first-hr, .second-hr{
+    display: none;
 }
 .reload{
     background-color: green;
