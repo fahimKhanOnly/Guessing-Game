@@ -1,7 +1,10 @@
 const form = document.querySelector(".play-ground");
-const usrNum = document.querySelector(".numInput");
+// const usrInpt = document.querySelector(".usr-input");
+const usrNum = form.querySelector(".numInput");
 const usrBtn = form.querySelector(".submit-btn");
 const totalResults = document.querySelector(".game-results");
+const finalResult = totalResults.querySelector(".final-result");
+const finalResultInit = "Finally You are ";
 
 const attemptMsg = totalResults.querySelector(".attempt-msg");
 let attemptMsgInit = `Total Remaining Attempt: `;
@@ -26,15 +29,26 @@ form.addEventListener("submit", (e) => {
     attemptsCount++;
     totalResults.querySelector(".first-hr").style.display = "block";
     if(10 <= attemptsCount){
-        attemptMsg.textContent = `${attemptMsgInit} ${10 - attemptsCount}`;
-        usrNum.disabled = true;
-        usrNum.style.backgroundColor = "lightgrey";
-        usrNum.style.cursor = "not-allowed";
-        usrBtn.disabled = true;
-        usrBtn.style.backgroundColor = "gray";
-        usrBtn.style.textDecoration = "line-through";
-        usrBtn.style.cursor = "not-allowed";
-        usrNum.setAttribute("placeholder", "Game over");
+        attemptMsg.style.display = "none";
+        form.style.display = "none";
+        totalResults.querySelector(".second-hr").style.display = "block";
+        if(wonCount > lostCount){
+            finalResult.textContent = finalResultInit + "Win";
+            finalResult.style.color = "green";
+            finalResult.style.fontWeight = "bold";
+            resultMsg.textContent = "Congratulations";
+            resultMsg.style.fontWeight = "bold";
+            resultMsg.style.color = "green";
+            resultMsg.style.fontFamily = "cursive";
+        }else if (wonCount < lostCount){
+            finalResult.textContent = finalResultInit + "Lost";
+            finalResult.style.color = "red";
+            resultMsg.textContent = "So sad";
+            resultMsg.style.fontWeight = "bold";
+            resultMsg.style.color = "red";
+        }else finalResult.textContent = "You are Draw";
+        usrBtn.style.display = "none";
+        totalResults.style.fontSize = "30px";
         reloadBtn.style.display = "block";
     }else attemptMsg.textContent = `${attemptMsgInit}${10 - attemptsCount}`;
     usrNum.value = "";
@@ -43,11 +57,11 @@ const checkingResult = (value) => {
     let getRandomNum = randomNum(5);
     if(getRandomNum == value){
         wonCount++;
-        wonMsg.textContent = `Won: ${wonCount}`;
+        wonMsg.textContent = `${wonCount}: Won`;
         resultMsg.textContent = `You have Won!`;
     }else{
         lostCount++;
-        lostMsg.textContent = `Lost: ${lostCount}`;
+        lostMsg.textContent = `${lostCount}: Lost`;
         resultMsg.textContent = `You have lost, Random Number was: ${getRandomNum}`;
     }
 };
